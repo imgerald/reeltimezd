@@ -122,7 +122,7 @@ function init() {
   filterView.onFilter(controlFilter);
   filterView.onSearch(controlSearch);
   filterView.onSort(controlSort);
-
+  listView.onSelect();
   listView.onEdit(controlEdit);
   listView.onDelete(controlDelete);
   listView.onStatusChange(controlStatus);

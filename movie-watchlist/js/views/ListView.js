@@ -7,7 +7,8 @@ import View from './View.js';
 
 const STATUS_LABELS = { planned: 'Planned', watching: 'Watching', watched: 'Watched' };
 
-export default class ListView extends View {
+export default class ListView extends View { 
+  selectedId = null;
   /** data = { movies, totalCount, editingId } */
   template({ movies, totalCount, editingId }) {
     if (movies.length === 0) {
@@ -38,7 +39,10 @@ export default class ListView extends View {
       .join('');
 
     return `
-      <li class="card status-${esc(movie.status)}${movie.id === editingId ? ' is-editing' : ''}">
+     <li class="card status-${esc(movie.status)}${movie.id === editingId ? ' is-editing' : ''}${movie.id === this.selectedId ? ' is-selected' : ''}"
+    data-card-id="${id}"
+    tabindex="0"
+    aria-selected="${movie.id === this.selectedId}">
         <div class="card-main">
           <h3 class="card-title">${esc(movie.title)}</h3>
           <p class="meta">
@@ -60,7 +64,20 @@ export default class ListView extends View {
   }
 
   /* ---------- handlers the controller subscribes to ---------- */
+onSelect() {
+  this.listen('click', '[data-card-id]', (event, card) => {
+    if (event.target.closest('button, select, input')) return;
 
+    this.selectedId = card.dataset.cardId;
+
+    this.root.querySelectorAll('[data-card-id]').forEach(item => {
+      const selected = item.dataset.cardId === this.selectedId;
+
+      item.classList.toggle('is-selected', selected);
+      item.setAttribute('aria-selected', String(selected));
+    });
+  });
+}
   onEdit(fn) {
     this.listen('click', '[data-action="edit"]', (event, button) => fn(button.dataset.id));
   }
