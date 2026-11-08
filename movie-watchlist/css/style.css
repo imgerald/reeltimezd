@@ -1,20 +1,27 @@
 /* Reel Time — plain CSS, no framework needed. */
 
+
 :root {
-  --bg: #F7F4EE;
+  --bg: #F3F8F7;
   --panel: #FFFFFF;
-  --panel-2: #F5F2EC;
-  --border: #E8E2D8;
-  --text: #252525;
-  --muted: #77776F;
-  --accent: #7C9A92;
+  --panel-2: #F7F8F5;
+  --border: #E2E5E0;
+  --text: #202E35;
+  --muted: #718086;
+
+  --accent: #16364D;
+  --accent-hover: #102A3D;
   --accent-ink: #FFFFFF;
-  --good: #6BAF8D;
-  --warn: #7A9EC2;
-  --danger: #D97777;
-  --radius: 14px;
+
+  --good: #628F89;
+  --warn: #87A7B8;
+  --danger: #C75F68;
+  --star: #F0B347;
+
+  --radius: 18px;
   color-scheme: light;
 }
+
 
 
 @media (prefers-color-scheme: light) {
@@ -45,7 +52,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.5 "Segoe UI", Arial, sans-serif;;
+ font-family: 'DM Sans', Arial, sans-serif;
 }
 
 h1, h2, h3, p { margin: 0; }
@@ -463,3 +470,4 @@ button:hover:not(:disabled) {
   background: #FFE3E7;
   border-color: #E8B8C0;
 }
+
