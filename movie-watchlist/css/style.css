@@ -1,5 +1,5 @@
 /* Reel Time — plain CSS, no framework needed. */
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
 
 :root {
   --bg: #F3F8F7;
@@ -52,14 +52,14 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
- font-family: 'DM Sans', Arial, sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 h1, h2, h3, p { margin: 0; }
 
 .subtitle,
 .card-title {
-  font-family: "Tiempos", Georgia, serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .sr-only {
@@ -166,8 +166,8 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--da
 }
 .btn:hover { border-color: var(--muted); }
 .btn-primary {
-  background: #39594F;
-  border-color: #39594F;
+  background: #16364D;
+  border-color: #16364D;
   color: #fff;
   font-weight: 600;
   flex: 1;
@@ -305,8 +305,8 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--da
 /* Highlight only when selected */
 .card.is-selected {
   background-color: var(--panel);
-  border: 3px solid #7F8C6A;
-  border-left: 5px solid #7F8C6A;
+  border: 3px solid #16364D;
+  border-left: 5px solid #16364D;
   box-shadow: none;
 }
 
@@ -321,7 +321,7 @@ input[aria-invalid="true"], select[aria-invalid="true"] { border-color: var(--da
 
 /* Keyboard Focus */
 .card:focus-visible {
-  outline: 2px solid #7F8C6A;
+  outline: 2px solid #16364D;
   outline-offset: 2px;
 }
 
