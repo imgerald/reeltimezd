@@ -128,7 +128,7 @@ export default class FormView extends View {
 
   /* ---------- handlers the controller subscribes to ---------- */
 
-  /** fn(formData) — receives the raw field values as an object. */
+  
   onSubmit(fn) {
     this.listen('submit', '#movie-form', (event, form) => {
       event.preventDefault();
